@@ -17,24 +17,24 @@ function ProductCard({ producto, yaEnCarrito, onAgregarCarrito }) {
   }
 
   return (
-    <article class={estaVendida ? 'tarjeta-producto tarjeta-vendida' : 'tarjeta-producto'}>
-      <div class="contenedor-img">
-        <span class={estaVendida ? 'etiqueta-estado etiqueta-vendida' : 'etiqueta-estado'}>
+    <article className={estaVendida ? 'tarjeta-producto tarjeta-vendida' : 'tarjeta-producto'}>
+      <div className="contenedor-img">
+        <span className={estaVendida ? 'etiqueta-estado etiqueta-vendida' : 'etiqueta-estado'}>
           {producto.disponibilidad || producto.estado}
         </span>
         <img src={rutaImagen} alt={producto.nombre} />
       </div>
 
-      <div class="info-producto">
-        <span class="categoria-tag">
+      <div className="info-producto">
+        <span className="categoria-tag">
           {producto.categoria} · Talla {producto.talla}
         </span>
         <h3>{producto.nombre}</h3>
-        <p class="descripcion-prenda">{producto.descripcion}</p>
-        <p class="precio">${Number(producto.precio).toLocaleString('es-CO')} COP</p>
+        <p className="descripcion-prenda">{producto.descripcion}</p>
+        <p className="precio">${Number(producto.precio).toLocaleString('es-CO')} COP</p>
 
         <button
-          class={deshabilitado ? 'btn-solicitar btn-deshabilitado' : 'btn-solicitar'}
+          className={deshabilitado ? 'btn-solicitar btn-deshabilitado' : 'btn-solicitar'}
           disabled={deshabilitado}
           onClick={() => onAgregarCarrito(producto)}
         >

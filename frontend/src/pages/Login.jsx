@@ -23,14 +23,14 @@ function Login({ onLoginExitoso }) {
   };
 
   return (
-    <section class="seccion-login">
-      <div class="caja-login">
+    <section className="seccion-login">
+      <div className="caja-login">
         <h2>Acceso Administrador</h2>
         <p>Ingresa tus credenciales privadas para gestionar ANELYA CLOTHING.</p>
 
-        {error && <div class="alerta-error">{error}</div>}
+        {error && <div className="alerta-error">{error}</div>}
 
-        <form onSubmit={manejarSubmit} class="form-solicitud">
+        <form onSubmit={manejarSubmit} className="form-solicitud">
           <input
             type="email"
             placeholder="Correo del administrador"
@@ -45,7 +45,7 @@ function Login({ onLoginExitoso }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit" class="btn-principal">Ingresar al Panel</button>
+          <button type="submit" className="btn-principal">Ingresar al Panel</button>
         </form>
       </div>
     </section>

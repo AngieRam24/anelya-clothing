@@ -2,10 +2,10 @@ import React from 'react';
 
 function NuestraHistoria() {
   return (
-    <section id="historia" class="nosotros">
-      <div class="nosotros-contenido">
-        <div class="nosotros-texto">
-          <span class="etiqueta-seccion">Identidad &amp; Propósito</span>
+    <section id="historia" className="nosotros">
+      <div className="nosotros-contenido">
+        <div className="nosotros-texto">
+          <span className="etiqueta-seccion">Identidad &amp; Propósito</span>
           <h2>Nuestra Historia</h2>
           <p>
             <strong>ANELYA CLOTHING</strong> es un emprendimiento de moda circular dedicado a rescatar, reparar y transformar prendas usadas para darles una segunda oportunidad.
@@ -21,7 +21,7 @@ function NuestraHistoria() {
           </p>
         </div>
 
-        <div class="nosotros-imagen">
+        <div className="nosotros-imagen">
           <img src="img/costurera.jpg" alt="Proceso artesanal en Anelya Clothing" />
         </div>
       </div>

@@ -12,14 +12,14 @@ function Catalogo({ productos, carrito = [], onAgregarCarrito }) {
   });
 
   return (
-    <section id="catalogo" class="contenedor">
-      <span class="etiqueta-seccion">Piezas Únicas</span>
+    <section id="catalogo" className="contenedor">
+      <span className="etiqueta-seccion">Piezas Únicas</span>
       <h2>Catálogo de Prendas Recuperadas</h2>
-      <p class="subtitulo-seccion">
+      <p className="subtitulo-seccion">
         Cada prenda es una pieza única. Añádela a tu carrito para solicitar su adquisición.
       </p>
 
-      <div class="barra-filtros">
+      <div className="barra-filtros">
         <div>
           <label>Categoría: </label>
           <select value={filtroCategoria} onChange={(e) => setFiltroCategoria(e.target.value)}>
@@ -42,7 +42,7 @@ function Catalogo({ productos, carrito = [], onAgregarCarrito }) {
         </div>
       </div>
 
-      <div class="grid-productos">
+      <div className="grid-productos">
         {productosFiltrados.map((prenda) => {
           const idPrenda = prenda._id || prenda.id;
           const yaEnCarrito = carrito.some((item) => (item._id || item.id) === idPrenda);

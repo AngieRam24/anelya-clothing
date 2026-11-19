@@ -79,21 +79,21 @@ function Admin({ token, productos, onRecargarProductos, onCerrarSesion }) {
   };
 
   return (
-    <section class="panel-admin">
-      <div class="admin-header">
+    <section className="panel-admin">
+      <div className="admin-header">
         <h2>Panel de Administración · ANELYA CLOTHING</h2>
-        <button class="btn-cerrar-sesion" onClick={onCerrarSesion}>Cerrar Sesión</button>
+        <button className="btn-cerrar-sesion" onClick={onCerrarSesion}>Cerrar Sesión</button>
       </div>
 
-      <div class="admin-tabs">
+      <div className="admin-tabs">
         <button
-          class={pestana === 'productos' ? 'tab-activa' : ''}
+          className={pestana === 'productos' ? 'tab-activa' : ''}
           onClick={() => setPestana('productos')}
         >
           Gestión de Productos (CRUD)
         </button>
         <button
-          class={pestana === 'solicitudes' ? 'tab-activa' : ''}
+          className={pestana === 'solicitudes' ? 'tab-activa' : ''}
           onClick={() => setPestana('solicitudes')}
         >
           Gestión de Solicitudes y Mensajes
@@ -101,8 +101,8 @@ function Admin({ token, productos, onRecargarProductos, onCerrarSesion }) {
       </div>
 
       {pestana === 'productos' ? (
-        <div class="admin-contenido">
-          <form onSubmit={manejarGuardarProducto} class="form-admin">
+        <div className="admin-contenido">
+          <form onSubmit={manejarGuardarProducto} className="form-admin">
             <h3>{editandoId ? 'Editar Prenda' : 'Agregar Nueva Prenda'}</h3>
             <input
               type="text"
@@ -118,7 +118,7 @@ function Admin({ token, productos, onRecargarProductos, onCerrarSesion }) {
               value={formProducto.descripcion}
               onChange={(e) => setFormProducto({ ...formProducto, descripcion: e.target.value })}
             />
-            <div class="fila-inputs">
+            <div className="fila-inputs">
               <select
                 value={formProducto.categoria}
                 onChange={(e) => setFormProducto({ ...formProducto, categoria: e.target.value })}
@@ -137,7 +137,7 @@ function Admin({ token, productos, onRecargarProductos, onCerrarSesion }) {
                 <option value="L">Talla L</option>
               </select>
             </div>
-            <div class="fila-inputs">
+            <div className="fila-inputs">
               <input
                 type="number"
                 placeholder="Precio en COP"
@@ -163,38 +163,38 @@ function Admin({ token, productos, onRecargarProductos, onCerrarSesion }) {
               <option value="Upcycling">Upcycling</option>
               <option value="Agotada">Agotada</option>
             </select>
-            <button type="submit" class="btn-principal">
+            <button type="submit" className="btn-principal">
               {editandoId ? 'Guardar Cambios' : 'Publicar Prenda'}
             </button>
           </form>
 
-          <div class="tabla-admin">
+          <div className="tabla-admin">
             <h3>Prendas Registradas ({productos.length})</h3>
             {productos.map((prod) => (
-              <div key={prod._id || prod.id} class="fila-admin-item">
+              <div key={prod._id || prod.id} className="fila-admin-item">
                 <div>
                   <strong>{prod.nombre}</strong> ({prod.categoria} · Talla {prod.talla}) - ${Number(prod.precio).toLocaleString('es-CO')} COP
                 </div>
-                <div class="acciones-fila">
-                  <button class="btn-editar" onClick={() => prepararEdicion(prod)}>Editar</button>
-                  <button class="btn-eliminar" onClick={() => manejarEliminar(prod._id || prod.id)}>Eliminar</button>
+                <div className="acciones-fila">
+                  <button className="btn-editar" onClick={() => prepararEdicion(prod)}>Editar</button>
+                  <button className="btn-eliminar" onClick={() => manejarEliminar(prod._id || prod.id)}>Eliminar</button>
                 </div>
               </div>
             ))}
           </div>
         </div>
       ) : (
-        <div class="tabla-admin">
+        <div className="tabla-admin">
           <h3>Solicitudes y Mensajes Recibidos ({solicitudes.length})</h3>
           {solicitudes.length === 0 ? (
             <p>Aún no hay solicitudes registradas en la base de datos.</p>
           ) : (
             solicitudes.map((sol) => (
-              <div key={sol._id} class="tarjeta-solicitud-admin">
+              <div key={sol._id} className="tarjeta-solicitud-admin">
                 <p><strong>Usuario:</strong> {sol.nombre} ({sol.correo})</p>
                 <p><strong>Tipo:</strong> {sol.tipoSolicitud} · <strong>Prenda:</strong> {sol.productoRelacionado}</p>
                 <p><strong>Mensaje:</strong> {sol.mensaje}</p>
-                <div class="estado-control">
+                <div className="estado-control">
                   <label>Estado: </label>
                   <select
                     value={sol.estado}

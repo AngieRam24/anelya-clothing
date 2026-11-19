@@ -270,7 +270,7 @@ function App() {
         vistaActual={vistaActual}
       />
 
-      {avisoCarrito && <div class="toast-carrito">{avisoCarrito}</div>}
+      {avisoCarrito && <div className="toast-carrito">{avisoCarrito}</div>}
 
       {vistaActual === 'tienda' ? (
         <main>

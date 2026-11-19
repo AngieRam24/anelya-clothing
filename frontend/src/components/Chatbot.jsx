@@ -83,30 +83,30 @@ function Chatbot() {
   };
 
   return (
-    <div class="chatbot-contenedor">
+    <div className="chatbot-contenedor">
       {abierto && (
-        <div class="chatbot-ventana">
-          <div class="chatbot-header">
+        <div className="chatbot-ventana">
+          <div className="chatbot-header">
             <div>
               <strong>Asistente ANELYA</strong>
-              <span class="chatbot-nota">Versión demostrativa (respuestas programadas)</span>
+              <span className="chatbot-nota">Versión demostrativa (respuestas programadas)</span>
             </div>
             <button onClick={() => setAbierto(false)}>X</button>
           </div>
 
-          <div class="chatbot-mensajes">
+          <div className="chatbot-mensajes">
             {mensajes.map((msg, idx) => (
-              <div key={idx} class={`msg ${msg.autor === 'bot' ? 'msg-bot' : 'msg-user'}`}>
+              <div key={idx} className={`msg ${msg.autor === 'bot' ? 'msg-bot' : 'msg-user'}`}>
                 {msg.texto}
               </div>
             ))}
 
-            <div class="sugerencias-chat">
+            <div className="sugerencias-chat">
               {PREGUNTAS_FRECUENTES.map((item, idx) => (
                 <button
                   key={idx}
                   type="button"
-                  class="btn-sugerencia"
+                  className="btn-sugerencia"
                   onClick={() => responderPregunta(item.pregunta)}
                 >
                   {item.pregunta}
@@ -115,7 +115,7 @@ function Chatbot() {
             </div>
           </div>
 
-          <form onSubmit={manejarEnvio} class="chatbot-form">
+          <form onSubmit={manejarEnvio} className="chatbot-form">
             <input
               type="text"
               placeholder="Escribe tu pregunta..."
@@ -127,7 +127,7 @@ function Chatbot() {
         </div>
       )}
 
-      <button class="chatbot-boton" onClick={() => setAbierto(!abierto)}>
+      <button className="chatbot-boton" onClick={() => setAbierto(!abierto)}>
         {abierto ? 'Cerrar Asistente' : 'Asistente IA'}
       </button>
     </div>

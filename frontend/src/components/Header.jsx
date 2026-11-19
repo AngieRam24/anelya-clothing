@@ -2,8 +2,8 @@ import React from 'react';
 
 function Header({ cantidadCarrito, onAbrirCarrito, onCambiarVista, vistaActual }) {
   return (
-    <header class="navbar">
-      <div class="logo" onClick={() => onCambiarVista('tienda')} style={{ cursor: 'pointer' }}>
+    <header className="navbar">
+      <div className="logo" onClick={() => onCambiarVista('tienda')} style={{ cursor: 'pointer' }}>
         ANELYA CLOTHING
       </div>
 
@@ -17,16 +17,16 @@ function Header({ cantidadCarrito, onAbrirCarrito, onCambiarVista, vistaActual }
             <a href="#contacto">Contacto</a>
           </>
         ) : (
-          <button class="btn-link" onClick={() => onCambiarVista('tienda')}>
+          <button className="btn-link" onClick={() => onCambiarVista('tienda')}>
             Volver a la Tienda
           </button>
         )}
 
-        <button class="btn-carrito" onClick={onAbrirCarrito}>
+        <button className="btn-carrito" onClick={onAbrirCarrito}>
           Carrito ({cantidadCarrito})
         </button>
 
-        <button class="btn-admin" onClick={() => onCambiarVista('admin')}>
+        <button className="btn-admin" onClick={() => onCambiarVista('admin')}>
           Admin
         </button>
       </nav>

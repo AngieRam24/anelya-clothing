@@ -26,17 +26,17 @@ function Contacto() {
   };
 
   return (
-    <section id="contacto" class="seccion-contacto">
-      <div class="contenedor-contacto">
-        <span class="etiqueta-seccion">Escríbenos</span>
+    <section id="contacto" className="seccion-contacto">
+      <div className="contenedor-contacto">
+        <span className="etiqueta-seccion">Escríbenos</span>
         <h2>Contacto y Consultas</h2>
-        <p class="subtitulo-seccion">
+        <p className="subtitulo-seccion">
           ¿Tienes dudas sobre nuestras prendas recuperadas, tallas o proceso de adquisición? Envíanos tu mensaje.
         </p>
 
-        {confirmacion && <div class="alerta-exito">{confirmacion}</div>}
+        {confirmacion && <div className="alerta-exito">{confirmacion}</div>}
 
-        <form onSubmit={manejarEnvio} class="form-contacto">
+        <form onSubmit={manejarEnvio} className="form-contacto">
           <input
             type="text"
             placeholder="Tu nombre completo"
@@ -67,7 +67,7 @@ function Contacto() {
             value={datos.mensaje}
             onChange={(e) => setDatos({ ...datos, mensaje: e.target.value })}
           ></textarea>
-          <button type="submit" class="btn-principal">Enviar Mensaje</button>
+          <button type="submit" className="btn-principal">Enviar Mensaje</button>
         </form>
       </div>
     </section>

@@ -39,10 +39,10 @@ function CarritoModal({ abierto, onCerrar, carrito, onEliminarItem, onConfirmarC
   };
 
   return (
-    <div class="modal-fondo">
-      <div class="modal-caja modal-carrito">
+    <div className="modal-fondo">
+      <div className="modal-caja modal-carrito">
         <button
-          class="btn-cerrar"
+          className="btn-cerrar"
           onClick={() => {
             setConfirmacion('');
             onCerrar();
@@ -53,10 +53,10 @@ function CarritoModal({ abierto, onCerrar, carrito, onEliminarItem, onConfirmarC
         <h3>Tu Selección de Prendas</h3>
 
         {confirmacion ? (
-          <div class="alerta-exito">
+          <div className="alerta-exito">
             <p>{confirmacion}</p>
             <button
-              class="btn-principal"
+              className="btn-principal"
               onClick={() => {
                 setConfirmacion('');
                 onCerrar();
@@ -66,12 +66,12 @@ function CarritoModal({ abierto, onCerrar, carrito, onEliminarItem, onConfirmarC
             </button>
           </div>
         ) : carrito.length === 0 ? (
-          <p class="texto-vacio">Aún no has añadido prendas a tu carrito.</p>
+          <p className="texto-vacio">Aún no has añadido prendas a tu carrito.</p>
         ) : (
           <>
-            <ul class="lista-carrito">
+            <ul className="lista-carrito">
               {carrito.map((item, index) => (
-                <li key={index} class="item-carrito">
+                <li key={index} className="item-carrito">
                   <div>
                     <strong>{item.nombre}</strong>
                     <span>
@@ -79,18 +79,18 @@ function CarritoModal({ abierto, onCerrar, carrito, onEliminarItem, onConfirmarC
                       · Talla {item.talla} · ${Number(item.precio).toLocaleString('es-CO')} COP
                     </span>
                   </div>
-                  <button class="btn-quitar" onClick={() => onEliminarItem(index)}>
+                  <button className="btn-quitar" onClick={() => onEliminarItem(index)}>
                     Quitar
                   </button>
                 </li>
               ))}
             </ul>
 
-            <p class="total-carrito">
+            <p className="total-carrito">
               Total estimado: <strong>${total.toLocaleString('es-CO')} COP</strong>
             </p>
 
-            <form onSubmit={manejarSolicitud} class="form-solicitud">
+            <form onSubmit={manejarSolicitud} className="form-solicitud">
               <input
                 type="text"
                 placeholder="Tu nombre completo"
@@ -111,7 +111,7 @@ function CarritoModal({ abierto, onCerrar, carrito, onEliminarItem, onConfirmarC
                 value={mensaje}
                 onChange={(e) => setMensaje(e.target.value)}
               ></textarea>
-              <button type="submit" class="btn-principal">
+              <button type="submit" className="btn-principal">
                 Confirmar Solicitud de Adquisición
               </button>
             </form>
